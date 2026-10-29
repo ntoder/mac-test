@@ -1,0 +1,10 @@
+name: Run on Mac
+on: [workflow_dispatch]
+jobs:
+  mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sw_vers
+      - run: system_profiler SPHardwareDataType
+      - run: xcodebuild -version
